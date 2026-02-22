@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light dark;
+  }
+
+  body {
+    @apply bg-neutral-50 text-neutral-900 dark:bg-neutral-900 dark:text-neutral-50 transition-colors duration-300;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-700 shadow-sm hover:shadow-md transition-shadow duration-200;
+  }
+
+  .btn {
+    @apply px-3 py-2 rounded-md font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 dark:focus:ring-offset-neutral-900;
+  }
+
+  .btn-primary {
+    @apply btn bg-accent-600 hover:bg-accent-700 text-white dark:bg-accent-500 dark:hover:bg-accent-600;
+  }
+
+  .btn-secondary {
+    @apply btn bg-neutral-200 hover:bg-neutral-300 text-neutral-900 dark:bg-neutral-700 dark:hover:bg-neutral-600 dark:text-neutral-50;
+  }
+
+  .input {
+    @apply w-full px-4 py-2 rounded-lg border border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-800 text-neutral-900 dark:text-neutral-50 placeholder:text-neutral-500 dark:placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent transition-all duration-200;
+  }
+
+  .badge {
+    @apply inline-block px-2 py-1 rounded-md text-xs font-medium bg-neutral-100 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300;
+  }
+
+  .badge-accent {
+    @apply inline-block px-2 py-1 rounded-md text-xs font-medium bg-accent-100 dark:bg-accent-900 text-accent-700 dark:text-accent-300;
+  }
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: theme('colors.neutral.300');
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: theme('colors.neutral.400');
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: theme('colors.neutral.600');
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: theme('colors.neutral.500');
+}
